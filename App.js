@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import RouteSwitch from './app/navigation/containers/RouteSwitch';
+import {Text, View} from 'react-native';
+import {Provider} from 'react-redux';
+import store, {persistors} from './app/redux/store';
+import {PersistGate} from 'redux-persist/integration/react';
+import NetInfo from '@react-native-community/netinfo';
 
-export default function App() {
+const App = () => {
+  const getNetwork = async () => {
+    let isNetwork = false;
+    await NetInfo.fetch().then((state) => {
+      isNetwork = state.isConnected;
+      console.log('App start===>', state);
+    });
+    return isNetwork;
+  };
+  getNetwork();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistors}>
+          <RouteSwitch />
+        </PersistGate>
+      </Provider>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

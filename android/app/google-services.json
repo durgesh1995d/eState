@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "708719660307",
+    "project_id": "estate-6fcc1",
+    "storage_bucket": "estate-6fcc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708719660307:android:4cb2416ec107b3634d5ee6",
+        "android_client_info": {
+          "package_name": "com.estate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD012ZkEEnWzx15zPwsREwbPlFQ2sPKV20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
