@@ -49,9 +49,9 @@ const TabBar = ({state, navigation}) => {
               fontFamily: Focused ? 'Bold' : 'Light',
             }}>
             {route.name === 'Finance'
-              ? 'My Finance'
+              ? 'Dashboard'
               : route.name === 'Community'
-              ? 'My Community'
+              ? 'Product'
               : route.name === 'Overview'
               ? 'Dashboard'
               : route.name}
@@ -70,7 +70,7 @@ const TabBar = ({state, navigation}) => {
         </Fragment>
       );
     },
-    [state.index]
+    [state.index],
   );
 
   return (
