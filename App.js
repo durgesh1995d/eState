@@ -1,18 +1,21 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import RouteSwitch from './app/navigation/containers/RouteSwitch';
-import {Text, View} from 'react-native';
+import {
+  NavigationContainer,
+  useNavigationContainerRef,
+} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import store, {persistors} from './app/redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
 import NetInfo from '@react-native-community/netinfo';
+import CommonComponent from './app/navigation/components/CommonComponent';
+import AppStackRoute from './app/navigation/containers/AppStackRoute';
 
 const App = () => {
+  const navigationRef = useNavigationContainerRef();
   const getNetwork = async () => {
     let isNetwork = false;
     await NetInfo.fetch().then((state) => {
       isNetwork = state.isConnected;
-      console.log('App start===>', state);
     });
     return isNetwork;
   };
@@ -21,7 +24,8 @@ const App = () => {
     <NavigationContainer>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistors}>
-          <RouteSwitch />
+          <AppStackRoute ref={navigationRef} />
+          <CommonComponent navigationRef={navigationRef} />
         </PersistGate>
       </Provider>
     </NavigationContainer>

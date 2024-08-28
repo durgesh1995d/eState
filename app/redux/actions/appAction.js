@@ -1,8 +1,16 @@
+import * as types from '../types';
 
-export const setTheme = (data) => (dispatch) => {
-  storeAppTheme(data.selectedTheme);
+export const fetchData = (data) => (dispatch) => {
   dispatch({
-    type: types.SET_THEME,
+    type: types.SET_FETCH,
     payload: data,
+  });
+};
+
+export const emptyData = () => (dispatch) => {
+  console.log('Empty =Action==');
+  dispatch({
+    type: types.SET_EMPTY,
+    payload: [],
   });
 };

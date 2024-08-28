@@ -1,7 +1,10 @@
 {
   "expo": {
     "name": "eState",
-    "slug": "eState",
-    "version": "1.0.0"
+    "slug": "estate",
+    "version": "1.0.0",
+    "android": {
+      "googleServicesFile": "./android/app/google-services.json"
+    }
   }
 }

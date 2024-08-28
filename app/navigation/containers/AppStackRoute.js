@@ -5,6 +5,8 @@ import Cummunity from '../screen/Cummunity';
 import More from '../screen/More';
 import HomeBottomNav from './BottomNavigation/HomeBottomNav';
 import DetailScreen from '../screen/DetailScreen';
+import Login from '../screen/Login';
+import SplashSreen from '../components/SplashScreen';
 
 const Stack = createNativeStackNavigator();
 const screenOptions = {
@@ -14,10 +16,18 @@ const AppStackRoute = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        name="SplashScreen"
+        component={SplashSreen}
+        options={screenOptions}
+      />
+
+      <Stack.Screen name="Login" component={Login} options={screenOptions} />
+      <Stack.Screen
         name="Dashboards"
         component={HomeBottomNav}
         options={screenOptions}
       />
+
       <Stack.Screen
         name="DetailScreen"
         component={DetailScreen}

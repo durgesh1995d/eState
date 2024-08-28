@@ -46,7 +46,6 @@ export async function getApiCall(apiUrl) {
       const baseUrl = null;
       // const headers = await config();
       //axios
-      console.log(`${apiUrl}`);
       await fetch(apiUrl)
         .then(async (res) => {
           if (res.status === 401) {
