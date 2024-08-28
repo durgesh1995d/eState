@@ -49,9 +49,9 @@ const TabBar = ({state, navigation}) => {
               fontFamily: Focused ? 'Bold' : 'Light',
             }}>
             {route.name === 'Finance'
-              ? 'Dashboard'
-              : route.name === 'Community'
               ? 'Product'
+              : route.name === 'Community'
+              ? 'Dashboard'
               : route.name === 'Overview'
               ? 'Dashboard'
               : route.name}
