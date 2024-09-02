@@ -13,7 +13,7 @@ const TabBar = ({state, navigation}) => {
     let iconName;
     if (routeName === 'Home') {
       iconName = dashboardIcon;
-    } else if (routeName === 'Community') {
+    } else if (routeName === 'Likes') {
       iconName = communityIcon;
     } else if (routeName === 'Finance') {
       iconName = financeIcon;
@@ -50,8 +50,8 @@ const TabBar = ({state, navigation}) => {
             }}>
             {route.name === 'Finance'
               ? 'Product'
-              : route.name === 'Community'
-              ? 'Dashboard'
+              : route.name === 'Likes'
+              ? 'Likes'
               : route.name === 'Overview'
               ? 'Dashboard'
               : route.name}

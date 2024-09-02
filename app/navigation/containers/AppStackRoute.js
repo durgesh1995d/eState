@@ -7,6 +7,7 @@ import HomeBottomNav from './BottomNavigation/HomeBottomNav';
 import DetailScreen from '../screen/DetailScreen';
 import Login from '../screen/Login';
 import SplashSreen from '../components/SplashScreen';
+import MovieDetails from '../screen/MovieDetails';
 
 const Stack = createNativeStackNavigator();
 const screenOptions = {
@@ -31,6 +32,12 @@ const AppStackRoute = () => {
       <Stack.Screen
         name="DetailScreen"
         component={DetailScreen}
+        options={({route}) => ({title: route.params.name})}
+      />
+
+      <Stack.Screen
+        name="MoviesScreen"
+        component={MovieDetails}
         options={({route}) => ({title: route.params.name})}
       />
 
